@@ -6,6 +6,7 @@ luac.out
 *.zip
 *.tar.gz
 .zshrc
+lazy-lock.json
 
 # Object files
 *.o
