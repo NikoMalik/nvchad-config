@@ -145,9 +145,9 @@ return {
         config = function(_, opts)
             dofile(vim.g.base46_cache .. "nvimtree")
             require("nvim-tree").setup(opts)
-            vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#ebdab4", bold = true })
-            vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#C0C0C0", bold = true })
-            vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#504945" })
+            -- vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#ebdab4", bold = true })
+            -- vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#C0C0C0", bold = true })
+            -- vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#504945" })
         end,
     },
     {

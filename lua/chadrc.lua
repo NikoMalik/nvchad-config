@@ -8,6 +8,25 @@ local M = {}
 M.ui = {
     custom_themeDir = { "themes" },
     theme = "doge",
+    hl_add = {
+        NvimTreeFolderIcon = { fg = "#504945" },
+        NvimTreeFolderName = { fg = "#ebdab4", bold = true },
+        NvimTreeOpenedFolderName = { fg = "#C0C0C0", bold = true },
+    },
+    hl_override = {
+        DiffChange = {
+            bg = "#464414",
+            fg = "none",
+        },
+        DiffAdd = {
+            bg = "#103507",
+            fg = "none",
+        },
+        DiffRemoved = {
+            bg = "#461414",
+            fg = "none",
+        },
+    },
     statusline = {
         theme = "vscode_colored",
         separator_style = "round",

@@ -56,11 +56,11 @@ M.base_16 = {
     base0F = "#ebdbb2",
 }
 
-M.add = {
-    NvimTreeFolderName = { fg = M.base_30.white, bold = true },
-    NvimTreeOpenedFolderName = { fg = M.base_30.base07 },
-}
-
+-- M.add = {
+--     NvimTreeFolderName = { fg = M.base_30.white, bold = true },
+--     NvimTreeOpenedFolderName = { fg = M.base_30.base07 },
+-- }
+--
 M.polish_hl = {
     Include = { fg = M.base_30.red },
     TSHighlightCapturesUnderCursor = { fg = M.base_30.green },
