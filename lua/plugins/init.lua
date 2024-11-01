@@ -216,6 +216,26 @@ return {
                 changedelete = { text = "~" },
                 untracked = { text = "│" },
             },
+            current_line_blame = true,
+            current_line_blame_opts = {
+                virt_text = true,
+                virt_text_pos = "eol",
+                delay = 500,
+                ignore_whitespace = false,
+                virt_text_priority = 100,
+                use_focus = true,
+            },
+            current_line_blame_formatter = "<author>, <author_time:%Y-%m-%d> - <summary>",
+            status_formatter = nil, -- Use default
+
+            sign_priority = 6,
+            preview_config = {
+                border = "single",
+                style = "minimal",
+                relative = "cursor",
+                row = 0,
+                col = 1,
+            },
         },
         config = function(_, opts)
             dofile(vim.g.base46_cache .. "git")
