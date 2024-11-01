@@ -83,7 +83,7 @@ return {
             },
 
             renderer = {
-                highlight_git = true,
+                highlight_git = false,
                 indent_markers = {
                     enable = false,
                 },
