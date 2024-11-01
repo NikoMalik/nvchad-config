@@ -84,13 +84,26 @@ return {
 
             renderer = {
                 highlight_git = true,
-                icons = {
-                    show = {
-                        git = true,
-                    },
-                },
                 indent_markers = {
                     enable = false,
+                },
+                highlight_opened_files = "name", -- Highlights the opened file in NvimTree
+                icons = {
+                    show = {
+                        file = true,
+                        folder = true,
+                        folder_arrow = true,
+                        git = true,
+                    },
+                    glyphs = {
+                        folder = {
+                            default = "",
+                            open = "",
+                            empty = "",
+                            empty_open = "",
+                            symlink = "",
+                        },
+                    },
                 },
             },
             actions = {
@@ -132,6 +145,9 @@ return {
         config = function(_, opts)
             dofile(vim.g.base46_cache .. "nvimtree")
             require("nvim-tree").setup(opts)
+            vim.api.nvim_set_hl(0, "NvimTreeFolderName", { fg = "#ebdab4", bold = true })
+            vim.api.nvim_set_hl(0, "NvimTreeOpenedFolderName", { fg = "#C0C0C0", bold = true })
+            vim.api.nvim_set_hl(0, "NvimTreeFolderIcon", { fg = "#504945" })
         end,
     },
     {
