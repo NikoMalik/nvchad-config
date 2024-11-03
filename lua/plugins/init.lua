@@ -3,14 +3,14 @@ return {
         "stevearc/conform.nvim",
         event = "BufWritePre", -- uncomment for format on save
         config = function()
-            require("configs.conform")
+            require "configs.conform"
         end,
     },
     -- These are some examples, uncomment them if you want to see them work!
     {
         "neovim/nvim-lspconfig",
         config = function()
-            require("configs.lspconfig")
+            require "configs.lspconfig"
         end,
     },
     {
@@ -18,8 +18,8 @@ return {
         lazy = false,
         config = function()
             dofile(vim.g.base46_cache .. "syntax")
-            require("configs.treesitter")
-            require("nvim-treesitter.configs").setup({
+            require "configs.treesitter"
+            require("nvim-treesitter.configs").setup {
                 highlight = {
                     enable = true,
                     disabe = { "indent" },
@@ -29,7 +29,7 @@ return {
                 indent = {
                     enable = true,
                 },
-            })
+            }
         end,
     },
     -- {
@@ -177,7 +177,7 @@ return {
     {
         "NvChad/nvterm",
         config = function(_, opts)
-            require("base46.term")
+            require "base46.term"
             require("nvterm").setup(opts)
         end,
     },
@@ -213,11 +213,11 @@ return {
             vim.api.nvim_create_autocmd({ "BufRead" }, {
                 group = vim.api.nvim_create_augroup("GitSignsLazyLoad", { clear = true }),
                 callback = function()
-                    vim.fn.system("git -C " .. '"' .. vim.fn.expand("%:p:h") .. '"' .. " rev-parse")
+                    vim.fn.system("git -C " .. '"' .. vim.fn.expand "%:p:h" .. '"' .. " rev-parse")
                     if vim.v.shell_error == 0 then
-                        vim.api.nvim_del_augroup_by_name("GitSignsLazyLoad")
+                        vim.api.nvim_del_augroup_by_name "GitSignsLazyLoad"
                         vim.schedule(function()
-                            require("lazy").load({ plugins = { "gitsigns.nvim" } })
+                            require("lazy").load { plugins = { "gitsigns.nvim" } }
                         end)
                     end
                 end,
@@ -263,7 +263,7 @@ return {
         event = "VeryLazy",
         dependencies = { "conform.nvim" },
         config = function()
-            require("configs.mason-conform")
+            require "configs.mason-conform"
         end,
     },
     {

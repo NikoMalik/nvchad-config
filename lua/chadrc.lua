@@ -5,6 +5,18 @@
 ---@type ChadrcConfig
 local M = {}
 
+-- M.create_fullsize = function (buf)
+--     local tbline_height = #vim.o.tabline = 0 and -1 or 0
+--     vim.api.nvim_open_win(buf, true, {
+--         row = 1 + tbline_height,
+--         col = 0,
+--         width = vim.o.columns,
+--         height = vim.o.lines - (3 + tbline_height),
+--         relative = "editor",
+--     })
+--
+-- end
+--
 M.ui = {
     custom_themeDir = { "themes" },
     theme = "doge",
@@ -27,11 +39,13 @@ M.ui = {
             fg = "none",
         },
     },
+    transparency = false,
+
     statusline = {
         theme = "vscode_colored",
         separator_style = "round",
         overriden_modules = function()
-            local st_modules = require("nvchad_ui.statusline_vscode_colored")
+            local st_modules = require "nvchad_ui.statusline_vscode_colored"
             return {
                 fileInfo = function()
                     local fn = vim.fn
@@ -44,8 +58,8 @@ M.ui = {
 
                     local new_sep_r = string.gsub(parts[2], " %%", "")
                     local icon = "  "
-                    local filename = (fn.expand("%") == "" and "Empty ") or fn.expand("%:t")
-                    local foldername = (fn.expand("%:p:h") == "" and "Empty") or fn.expand("%:p:h:t")
+                    local filename = (fn.expand "%" == "" and "Empty ") or fn.expand "%:t"
+                    local foldername = (fn.expand "%:p:h" == "" and "Empty") or fn.expand "%:p:h:t"
 
                     local modified_indicator = ""
                     if vim.bo.modified then

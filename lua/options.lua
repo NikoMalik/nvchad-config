@@ -1,22 +1,4 @@
-require("nvchad.options")
-
--- require("indent_blankline").setup{
---   char = "",
---   show_traling_blankline_indent = false,
---   show_first+indent_level = false,
--- }
---
-
--- require("nvim-treesitter.configs").setup({
---     highlight = {
---         enable = true,
---         disable = { "indent" },
---     },
---     indent = {
---         enable = true,
---     },
--- })
---
+require "nvchad.options"
 
 local o = vim.o
 o.cursorlineopt = "both" -- to enable cursorline!
@@ -26,9 +8,22 @@ o.softtabstop = 4
 o.wrap = false
 o.sidescroll = 1
 
-vim.diagnostic.config({
+o.cmdheight = 0
+
+o.breakindent = true
+o.backup = false
+o.writebackup = false
+vim.diagnostic.config {
     virtual_text = true,
-})
+}
+
+if vim.g.neovide then
+    vim.o.guifont = "GeistMono Nerd Font:h10"
+
+    vim.g.neovide_refresh_rate = 75
+
+    vim.g.neovide_cursor_vfx_mode = "railgun"
+end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
