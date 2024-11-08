@@ -1,8 +1,8 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require("lspconfig")
-local nvlsp = require("nvchad.configs.lspconfig")
+local lspconfig = require "lspconfig"
+local nvlsp = require "nvchad.configs.lspconfig"
 -- local util = require "lspconfig/util"
 --
 -- EXAMPLE
@@ -25,7 +25,7 @@ end
 -- Setup other LSP servers
 for _, lsp in ipairs(servers) do
     if lsp ~= "gopls" and lsp ~= "clangd" then
-        lspconfig[lsp].setup({
+        lspconfig[lsp].setup {
             on_attach = function(client, bufnr)
                 nvlsp.on_attach(client, bufnr)
 
@@ -36,12 +36,12 @@ for _, lsp in ipairs(servers) do
             end,
             on_init = nvlsp.on_init,
             capabilities = nvlsp.capabilities,
-        })
+        }
     end
 end
 
 -- Setup gopls
-lspconfig.gopls.setup({
+lspconfig.gopls.setup {
     on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
@@ -67,7 +67,7 @@ lspconfig.gopls.setup({
                 -- test = true, -- Run tests directly in the editor
             },
             staticcheck = true,
-            diagnosticsDelay = "500ms",
+            diagnosticsDelay = "100ms",
             hoverKind = "FullDocumentation", -- Can be "SingleLine", "Structured" or "FullDocumentation"
 
             usePlaceholders = false,
@@ -76,9 +76,9 @@ lspconfig.gopls.setup({
             },
         },
     },
-})
+}
 
-lspconfig.clangd.setup({
+lspconfig.clangd.setup {
     on_attach = function(client, bufnr)
         client.server_capabilities.documentFormattingProvider = false
         client.server_capabilities.documentRangeFormattingProvider = false
@@ -90,7 +90,7 @@ lspconfig.clangd.setup({
     settings = {
         maxPreload = 100000,
         preloadFileSize = 10000,
-        diagnosticsDelay = "500ms",
+        diagnosticsDelay = "100ms",
         clangd = {
             cmd = {
                 "clangd",
@@ -107,4 +107,4 @@ lspconfig.clangd.setup({
             },
         },
     },
-})
+}

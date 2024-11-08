@@ -270,9 +270,18 @@ return {
         "folke/trouble.nvim",
         cmd = "Trouble",
 
+        keys = {
+            {
+                "<leader>di",
+                "<cmd>Trouble diagnostics toggle<cr>",
+                desc = "Diagnostics (Trouble)",
+            },
+        },
         config = function()
-            dofile(vim.g.base46_cache .. "trouble")
-            require("trouble").setup()
+            -- dofile(vim.g.base46_cache .. "trouble")
+            require("trouble").setup {
+                mode = "document_diagnostics",
+            }
         end,
     },
 }

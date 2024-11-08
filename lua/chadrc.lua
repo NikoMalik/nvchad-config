@@ -39,7 +39,10 @@ M.ui = {
             fg = "none",
         },
     },
-    transparency = false,
+    tabufline = {
+        enabled = true,
+        lazyload = true,
+    },
 
     statusline = {
         theme = "vscode_colored",

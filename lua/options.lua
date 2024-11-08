@@ -8,11 +8,12 @@ o.softtabstop = 4
 o.wrap = false
 o.sidescroll = 1
 
-o.cmdheight = 0
+-- o.cmdheight = 2
 
 o.breakindent = true
 o.backup = false
 o.writebackup = false
+o.showtabline = 0
 vim.diagnostic.config {
     virtual_text = true,
 }
@@ -21,8 +22,6 @@ if vim.g.neovide then
     vim.o.guifont = "GeistMono Nerd Font:h10"
 
     vim.g.neovide_refresh_rate = 75
-
-    vim.g.neovide_cursor_vfx_mode = "railgun"
 end
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
