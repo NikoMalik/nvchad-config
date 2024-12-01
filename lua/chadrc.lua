@@ -15,8 +15,8 @@ local M = {}
 --         relative = "editor",
 --     })
 --
--- end
---
+-- enD
+
 M.ui = {
     custom_themeDir = { "themes" },
     theme = "doge",

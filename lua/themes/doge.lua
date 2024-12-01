@@ -64,6 +64,7 @@ M.base_16 = {
 M.polish_hl = {
     Include = { fg = M.base_30.red },
     TSHighlightCapturesUnderCursor = { fg = M.base_30.green },
+    transparancy = true,
 
     treesitter = {
         ["@character.special.make"] = { fg = M.base_30.red },
@@ -84,7 +85,7 @@ M.polish_hl = {
         ["@keyword.import.go"] = { fg = M.base_30.green },
         ["@keyword.type.struct"] = { fg = M.base_30.nord_blue },
         ["@keyword.repeat"] = { fg = M.base_30.red },
-        ["@type"] = { fg = M.base_30.red },
+        ["@type"] = { fg = M.base_30.white },
         ["@type.builtin.c"] = { fg = M.base_30.red },
         ["@punctuation.separator"] = { fg = M.base_30.green },
         ["@property"] = { fg = M.base_30.white },
