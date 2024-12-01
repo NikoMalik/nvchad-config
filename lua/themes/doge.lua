@@ -34,7 +34,7 @@ M.base_30 = {
     statusline_bg = "#3c3836",
     lightbg = "#504945",
     pmenu_bg = "#458588",
-    folder_bg = "#458588",
+    folder_bg = "#ebdab4",
 }
 
 M.base_16 = {
@@ -74,7 +74,7 @@ M.polish_hl = {
         ["@unary_expression"] = { fg = M.base_30.green },
         -- ["*"] = { fg = M.base_30.green },
         ["@keyword.import.c"] = { fg = M.base_30.green },
-        ["@function"] = { fg = M.base_30.baby_pink },
+        ["@function"] = { fg = M.base_30.white },
         ["@function.make"] = { fg = M.base_30.red },
         ["@function.builtin"] = { fg = M.base_30.baby_pink },
         ["@comment"] = { fg = M.base_30.cyan, italic = true },
@@ -98,7 +98,7 @@ M.polish_hl = {
         ["@keyword.return"] = { fg = M.base_30.red },
         ["@keyword.conditional"] = { fg = M.base_30.red },
         ["@function.method.call"] = { fg = M.base_30.baby_pink },
-        ["@function.method"] = { fg = M.base_30.baby_pink },
+        ["@function.method"] = { fg = M.base_30.white },
         ["@function.builtin.lua"] = { fg = M.base_30.red },
         ["@operator"] = { fg = "#73b6f1" },
         ["@builtin"] = { fg = M.base_30.sun },
