@@ -19,12 +19,11 @@ local M = {}
 
 M.ui = {
     custom_themeDir = { "themes" },
-    theme = "doge",
-    hl_add = {
-        NvimTreeFolderIcon = { fg = "#504945" },
-        NvimTreeFolderName = { fg = "#ebdab4", bold = true },
-        NvimTreeOpenedFolderName = { fg = "#C0C0C0", bold = true },
-    },
+    -- hl_add = {
+    --     NvimTreeFolderIcon = { fg = "#504945" },
+    --     NvimTreeFolderName = { fg = "#ebdab4", bold = true },
+    --     NvimTreeOpenedFolderName = { fg = "#C0C0C0", bold = true },
+    -- },
     hl_override = {
         DiffChange = {
             bg = "#464414",
@@ -89,6 +88,7 @@ M.ui = {
 
 M.base46 = {
     theme = "doge",
+    transparency = true,
 }
 
 return M

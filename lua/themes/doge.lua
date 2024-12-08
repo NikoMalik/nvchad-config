@@ -64,7 +64,6 @@ M.base_16 = {
 M.polish_hl = {
     Include = { fg = M.base_30.red },
     TSHighlightCapturesUnderCursor = { fg = M.base_30.green },
-    transparancy = true,
 
     treesitter = {
         ["@character.special.make"] = { fg = M.base_30.red },
