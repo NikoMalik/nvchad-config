@@ -19,26 +19,13 @@ local M = {}
 
 M.ui = {
     custom_themeDir = { "themes" },
-    -- hl_add = {
-    --     NvimTreeFolderIcon = { fg = "#504945" },
-    --     NvimTreeFolderName = { fg = "#ebdab4", bold = true },
-    --     NvimTreeOpenedFolderName = { fg = "#C0C0C0", bold = true },
-    -- },
 
     hl_override = {
-        DiffChange = {
-            bg = "#464414",
-            fg = "none",
-        },
-        DiffAdd = {
-            bg = "#103507",
-            fg = "none",
-        },
-        DiffRemoved = {
-            bg = "#461414",
-            fg = "none",
-        },
+        DiffChange = { bg = "#464414", fg = "none" },
+        DiffAdd = { bg = "#103507", fg = "none" },
+        DiffRemoved = { bg = "#461414", fg = "none" },
     },
+
     tabufline = {
         enabled = true,
         lazyload = true,
@@ -46,44 +33,34 @@ M.ui = {
 
     statusline = {
         theme = "vscode_colored",
-        separator_style = "round",
-        overriden_modules = function()
-            local st_modules = require "nvchad_ui.statusline_vscode_colored"
-            return {
-                fileInfo = function()
-                    local fn = vim.fn
-                    local sep = "%#St_file_sep#"
-                    local str = st_modules.fileInfo()
-                    local parts = {}
-                    for match in (str .. sep):gmatch("(.-)" .. sep) do
-                        table.insert(parts, match)
-                    end
+        order = { "folder", "commit", "%=", "cursor", "git", "diagnostics" },
+        modules = {
+            folder = function()
+                local path = vim.fn.expand "%:p:h"
+                if path == "" then
+                    return " [No File] "
+                end
 
-                    local new_sep_r = string.gsub(parts[2], " %%", "")
-                    local icon = "  "
-                    local filename = (fn.expand "%" == "" and "Empty ") or fn.expand "%:t"
-                    local foldername = (fn.expand "%:p:h" == "" and "Empty") or fn.expand "%:p:h:t"
+                local current = vim.fn.fnamemodify(path, ":t")
+                return "%#St_file_info#" .. current .. " "
+            end,
+            commit = function()
+                local is_git_repo = vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null"):gsub("%s+", "")
+                if is_git_repo ~= "true" then
+                    return ""
+                end
 
-                    local modified_indicator = ""
-                    if vim.bo.modified then
-                        modified_indicator = " "
-                    end
+                local handle = io.popen "git log -1 --pretty=%s 2>/dev/null"
+                local commit_msg = handle and handle:read "*a" or ""
+                if handle then
+                    handle:close()
+                end
 
-                    if filename ~= "Empty " then
-                        local devicons_present, devicons = pcall(require, "nvim-web-devicons")
+                commit_msg = commit_msg:gsub("%s+", ""):sub(1, 50)
 
-                        if devicons_present then
-                            local ft_icon = devicons.get_icon(filename)
-                            icon = (ft_icon ~= nil and " " .. ft_icon) or ""
-                        end
-
-                        filename = " " .. foldername .. " -> " .. filename .. modified_indicator .. " "
-                    end
-
-                    return "%#St_file_info#" .. icon .. filename .. "%#St_file_sep#" .. new_sep_r
-                end,
-            }
-        end,
+                return commit_msg ~= "" and "  " .. commit_msg .. " " or ""
+            end,
+        },
     },
 }
 
@@ -158,8 +135,10 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "vesper",
-    -- transparency = true,
+    theme = "gruvchad",
+
+    -- vim.cmd.colorscheme "default",
+    transparency = true,
 }
 
 return M

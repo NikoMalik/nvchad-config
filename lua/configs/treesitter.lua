@@ -23,6 +23,7 @@ local options = {
         "vim",
         "vimdoc",
         "sql",
+        "zig",
     },
 
     -- indent = { enable = true },

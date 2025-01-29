@@ -7,6 +7,7 @@ local options = {
         c = { "clang-format" },
         cpp = { "clang-format" },
         markdown = { "marksman" },
+        zig = { "zig fmt" },
     },
 
     formatters = {

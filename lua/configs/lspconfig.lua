@@ -12,6 +12,7 @@ local servers = {
     "gopls",
     "clangd",
     "marksman",
+    "zls",
 }
 
 -- Function to disable clangd on .proto files
@@ -39,6 +40,19 @@ for _, lsp in ipairs(servers) do
         }
     end
 end
+
+lspconfig.zls.setup {
+    on_attach = function(client, bufnr)
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+        nvlsp.on_attach(client, bufnr)
+    end,
+    capabilities = nvlsp.capabilities,
+    on_init = nvlsp.on_init,
+    cmd = { "zls" },
+    filetypes = { "zig", "zon" },
+    -- root_dir = util.root_pattern("zls.json", "build.zig", ".git")
+}
 
 -- Setup gopls
 lspconfig.gopls.setup {
