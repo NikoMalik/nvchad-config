@@ -21,14 +21,22 @@ end
 map("n", "gd", function()
     vim.lsp.buf.definition()
 end, { desc = "Go to definition" })
+
+map("n", "<leader>fs", function()
+    require("telescope.builtin").live_grep()
+end, { desc = "Document symbols" })
 --
 -- map("n", "<leader>gib", function()
 --     vim.lsp.buf.hover()
 -- end)
 
-map("n", "<leader>rnm", function()
+map("n", "<leader>rn", function()
     vim.lsp.buf.rename()
 end)
+
+map("n", "<leader>rr", function()
+    vim.lsp.buf.references()
+end, { desc = "List references" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")

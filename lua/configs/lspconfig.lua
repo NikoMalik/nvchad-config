@@ -111,8 +111,8 @@ lspconfig.clangd.setup {
             cmd = {
                 "clangd",
                 "--background-index",
-                "--clang-tidy",
                 "--header-insertion=iwyu",
+                "--clang-tidy",
                 "--completion-style=detailed",
                 "--function-arg-placeholders",
             },
