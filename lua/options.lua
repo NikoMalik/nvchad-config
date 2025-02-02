@@ -18,11 +18,9 @@ vim.diagnostic.config {
     virtual_text = true,
 }
 
--- if vim.g.neovide then
---     vim.o.guifont = "GeistMono Nerd Font:h10"
---
---     vim.g.neovide_refresh_rate = 75
--- end
+o.smartindent = true
+
+o.relativenumber = false
 
 local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do

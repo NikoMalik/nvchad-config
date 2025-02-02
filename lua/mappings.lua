@@ -1,4 +1,4 @@
-require("nvchad.mappings")
+require "nvchad.mappings"
 
 -- add yours here
 
@@ -6,17 +6,29 @@ local map = vim.keymap.set
 
 -- local p = require("nvchad.tabufline").prev()
 -- local n = require("nvchad.tabufline").next()
-local tabufline = require("nvchad.tabufline")
+local tabufline = require "nvchad.tabufline"
 
 for i = 1, 9 do
     map("n", string.format("<A-%s>", i), function()
         if vim.t.bufs and vim.t.bufs[i] then
             vim.api.nvim_set_current_buf(vim.t.bufs[i])
         else
-            print("Buffer not found!")
+            print "Buffer not found!"
         end
     end, { desc = string.format("Switch to buffer %s", i) })
 end
+
+map("n", "gd", function()
+    vim.lsp.buf.definition()
+end, { desc = "Go to definition" })
+--
+-- map("n", "<leader>gib", function()
+--     vim.lsp.buf.hover()
+-- end)
+
+map("n", "<leader>rnm", function()
+    vim.lsp.buf.rename()
+end)
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")

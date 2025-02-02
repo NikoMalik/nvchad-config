@@ -33,7 +33,7 @@ M.ui = {
 
     statusline = {
         theme = "vscode_colored",
-        order = { "folder", "commit", "%=", "cursor", "git", "diagnostics" },
+        order = { "folder", "commit", "%=", "lsp", "cursor", "git", "diagnostics" },
         modules = {
             folder = function()
                 local path = vim.fn.expand "%:p:h"
@@ -135,7 +135,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "gruvchad",
+    theme = "tokyonight",
 
     -- vim.cmd.colorscheme "default",
     transparency = true,

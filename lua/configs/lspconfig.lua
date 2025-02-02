@@ -1,9 +1,8 @@
--- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
 local lspconfig = require "lspconfig"
 local nvlsp = require "nvchad.configs.lspconfig"
--- local util = require "lspconfig/util"
+local util = require "lspconfig/util"
 --
 -- EXAMPLE
 local servers = {
@@ -50,8 +49,8 @@ lspconfig.zls.setup {
     capabilities = nvlsp.capabilities,
     on_init = nvlsp.on_init,
     cmd = { "zls" },
-    filetypes = { "zig", "zon" },
-    -- root_dir = util.root_pattern("zls.json", "build.zig", ".git")
+    filetypes = { "zig", "zon", "zir" },
+    root_dir = util.root_pattern("zls.json", "build.zig", ".git"),
 }
 
 -- Setup gopls
@@ -87,6 +86,9 @@ lspconfig.gopls.setup {
             usePlaceholders = false,
             analyses = {
                 unusedparam = true,
+                -- fieldalignment = true,
+                sizeoffset = true,
+                shadow = true,
             },
         },
     },
