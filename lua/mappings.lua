@@ -18,6 +18,8 @@ for i = 1, 9 do
     end, { desc = string.format("Switch to buffer %s", i) })
 end
 
+map("n", "<C-a>", "gg<S-v>G")
+
 map("n", "gd", function()
     vim.lsp.buf.definition()
 end, { desc = "Go to definition" })
@@ -40,7 +42,7 @@ end, { desc = "List references" })
 
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
-map("t", "<C-b>", "<cmd>NvimTreeToggle")
+map("t", "<C-n>", "<cmd>NvimTreeToggle")
 map({ "n", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "General save file" })
 map("n", "<S-h>", function()
     tabufline.prev()
@@ -89,7 +91,7 @@ map("v", "<A-Up>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move line up" })
 
 -- For NVIM tree
-map("n", "<C-b>", ":NvimTreeToggle<CR>")
+map("n", "<C-n>", ":NvimTreeToggle<CR>")
 map("n", "<C-e>", ":NvimTreeFocus<CR>")
 map("n", "<r>", ":NvimTreeRename<CR>")
 map("n", "<A-f>", "<cmd>lua vim.lsp.buf.definition()<CR>")

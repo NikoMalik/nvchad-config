@@ -50,6 +50,7 @@ lspconfig.zls.setup {
     on_init = nvlsp.on_init,
     cmd = { "zls" },
     filetypes = { "zig", "zon", "zir" },
+    -- root_dir = "../../../zls.json",
     root_dir = util.root_pattern("zls.json", "build.zig", ".git"),
 }
 
@@ -111,8 +112,8 @@ lspconfig.clangd.setup {
             cmd = {
                 "clangd",
                 "--background-index",
-                "--header-insertion=iwyu",
                 "--clang-tidy",
+                "--header-insertion=iwyu",
                 "--completion-style=detailed",
                 "--function-arg-placeholders",
             },

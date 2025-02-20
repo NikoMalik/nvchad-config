@@ -7,6 +7,7 @@ o.tabstop = 4
 o.softtabstop = 4
 o.wrap = false
 o.sidescroll = 1
+o.ignorecase = true
 
 -- o.cmdheight = 2
 
