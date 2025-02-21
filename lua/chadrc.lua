@@ -115,7 +115,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "gorgoth",
+    theme = "bathory",
 
     -- vim.cmd.colorscheme "default",
     -- transparency = true,
