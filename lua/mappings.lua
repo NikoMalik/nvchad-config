@@ -6,17 +6,17 @@ local map = vim.keymap.set
 
 -- local p = require("nvchad.tabufline").prev()
 -- local n = require("nvchad.tabufline").next()
-local tabufline = require "nvchad.tabufline"
-
-for i = 1, 9 do
-    map("n", string.format("<A-%s>", i), function()
-        if vim.t.bufs and vim.t.bufs[i] then
-            vim.api.nvim_set_current_buf(vim.t.bufs[i])
-        else
-            print "Buffer not found!"
-        end
-    end, { desc = string.format("Switch to buffer %s", i) })
-end
+-- local tabufline = require "nvchad.tabufline"
+--
+-- for i = 1, 9 do
+--     map("n", string.format("<A-%s>", i), function()
+--         if vim.t.bufs and vim.t.bufs[i] then
+--             vim.api.nvim_set_current_buf(vim.t.bufs[i])
+--         else
+--             print "Buffer not found!"
+--         end
+--     end, { desc = string.format("Switch to buffer %s", i) })
+-- end
 
 map("n", "<C-a>", "gg<S-v>G")
 
@@ -44,13 +44,31 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 map("t", "<C-n>", "<cmd>NvimTreeToggle")
 map({ "n", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "General save file" })
-map("n", "<S-h>", function()
-    tabufline.prev()
-end, { desc = "Tabufline move buffer to the left" })
 
-map("n", "<S-l>", function()
-    tabufline.next()
-end, { desc = "Tabufline move buffer to the right" })
+--vsplit
+
+map("n", "|", ":split<CR>", { desc = "Horizontal Split" })
+
+-- harpooon
+--
+-- HOW TO DELETE??
+-- SPACE +MT = DD TO FILE
+map("n", "<leader>m", ":lua require('harpoon.mark').add_file()<CR>", { noremap = true, desc = "harpoon add file" })
+map("n", "<leader>mt", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "harpoon toggle quick menu" })
+map("n", "<leader>sm", ":Telescope harpoon marks<CR>", { desc = "harpoon marks", noremap = true })
+--
+-- map("n", "<leader>a", function()
+--     harpoon.mark.add_file()
+-- end, { desc = "harpoon add file" })
+--
+-- map("n", "<leader>ah", function()
+--     harpoonui.toggle_quick_menu()
+-- end, { desc = "harpoon toggle quick menu" })
+--
+map("n", "<S-h>", ":lua require('harpoon.ui').nav_prev()<CR>", { desc = "harpoon to the left", noremap = true })
+map("n", "<S-l>", ":lua require('harpoon.ui').nav_next()<CR>", { desc = "harpoon to the right", noremap = true })
+
+--
 map("i", "<C-g>", function()
     return vim.fn["codeium#Accept"]()
 end, { expr = true })

@@ -64,18 +64,6 @@ M.base_16 = {
 
 M.type = "dark"
 
-local hl = vim.tbl_extend("force", M.base_30, M.base_16)
-
-M.polish_hl = {
-    ["@constructor"] = { fg = hl.base0D },
-    ["@parameter"] = { fg = hl.white },
-    ["@field"] = { fg = hl.base09 },
-    ["@property"] = { fg = hl.base08 },
-    ["@namespace"] = { fg = hl.base08 },
-    ["@variable"] = { fg = hl.base05 },
-    ["@variable.builtin"] = { fg = hl.base09 },
-}
-
 M = require("base46").override_theme(M, "black-metal-bathory")
 
 return M

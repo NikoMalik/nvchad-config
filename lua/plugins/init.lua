@@ -8,6 +8,14 @@ return {
     },
 
     {
+        "ThePrimeagen/harpoon",
+        event = "VeryLazy",
+        config = function()
+            require("harpoon").setup()
+        end,
+    },
+
+    {
         "neovim/nvim-lspconfig",
         config = function()
             require "configs.lspconfig"
@@ -197,10 +205,10 @@ return {
             },
         },
     },
-    {
-        "lukas-reineke/indent-blankline.nvim",
-        enabled = false,
-    },
+    -- {
+    --     "lukas-reineke/indent-blankline.nvim",
+    --     enabled = false,
+    -- },
     {
         "Exafunction/codeium.vim",
         lazy = false,

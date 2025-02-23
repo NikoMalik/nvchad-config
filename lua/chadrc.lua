@@ -27,22 +27,21 @@ M.ui = {
     },
 
     tabufline = {
-        enabled = true,
+        enabled = false,
         lazyload = true,
+        order = { "buffers", "treeOffset" },
     },
 
     statusline = {
         theme = "vscode_colored",
-        order = { "folder", "commit", "%=", "lsp", "cursor", "git", "diagnostics" },
+        order = { "folder", "commit", "%=", "git", "diagnostics" },
         modules = {
             folder = function()
-                local path = vim.fn.expand "%:p:h"
-                if path == "" then
-                    return " [No File] "
-                end
+                local path = vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
 
-                local current = vim.fn.fnamemodify(path, ":t")
-                return "%#St_file_info#" .. current .. " "
+                local modified = vim.bo.modified and "[+]" or ""
+
+                return "%#St_file_info#" .. path .. " " .. modified .. " "
             end,
             commit = function()
                 local is_git_repo = vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null"):gsub("%s+", "")
@@ -115,7 +114,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "bathory",
+    theme = "gorgoth",
 
     -- vim.cmd.colorscheme "default",
     -- transparency = true,
