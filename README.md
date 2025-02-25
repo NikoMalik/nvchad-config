@@ -1,21 +1,20 @@
 # Example for doge theme 
 
 
-![image](https://github.com/user-attachments/assets/61babd9c-7675-4d44-a2c1-cdcb77201a29)
+![image](https://github.com/user-attachments/assets/7fe5a5da-ec96-4f06-acf2-68764593239a)
 
 
-![image](https://github.com/user-attachments/assets/d31f73d1-a559-42df-848a-ec205b78fa22)
+![image](https://github.com/user-attachments/assets/e72802e6-698b-4989-b7f8-90e80eb6b67d)
 
 
-![image](https://github.com/user-attachments/assets/427aa7f8-467c-4d27-b54f-52e8515a55c8)
+![image](https://github.com/user-attachments/assets/cdc69671-1288-48e7-9a85-8ab002a68904)
 
 
 
 
-![image](edit.png)
 
 
-# another example 
 
 
-![image](buffer.png)
+
+
