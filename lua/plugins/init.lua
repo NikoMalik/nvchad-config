@@ -205,13 +205,14 @@ return {
             },
         },
     },
-    -- {
-    --     "lukas-reineke/indent-blankline.nvim",
-    --     enabled = false,
-    -- },
+    {
+        "lukas-reineke/indent-blankline.nvim",
+        enabled = false,
+    },
     {
         "Exafunction/codeium.vim",
         lazy = false,
+        enabled = false,
     },
     {
         "lewis6991/gitsigns.nvim",

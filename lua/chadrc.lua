@@ -39,7 +39,7 @@ M.ui = {
             folder = function()
                 local path = vim.fn.fnamemodify(vim.fn.getcwd(), ":~")
 
-                local modified = vim.bo.modified and "[+]" or ""
+                local modified = vim.bo.modified and "[+]" or "[-]"
 
                 return "%#St_file_info#" .. path .. " " .. modified .. " "
             end,
@@ -114,7 +114,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "gorgoth",
+    theme = "metal",
 
     -- vim.cmd.colorscheme "default",
     -- transparency = true,

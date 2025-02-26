@@ -19,6 +19,8 @@ local map = vim.keymap.set
 -- end
 
 map("n", "<C-a>", "gg<S-v>G")
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
 
 map("n", "gd", function()
     vim.lsp.buf.definition()
@@ -56,6 +58,11 @@ map("n", "|", ":split<CR>", { desc = "Horizontal Split" })
 map("n", "<leader>m", ":lua require('harpoon.mark').add_file()<CR>", { noremap = true, desc = "harpoon add file" })
 map("n", "<leader>mt", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", { desc = "harpoon toggle quick menu" })
 map("n", "<leader>sm", ":Telescope harpoon marks<CR>", { desc = "harpoon marks", noremap = true })
+map("n", "<A-1>", ":lua require('harpoon.ui').nav_file(1)<CR>", { desc = "harpoon to the left", noremap = true })
+map("n", "<A-2>", ":lua require('harpoon.ui').nav_file(2)<CR>", { desc = "harpoon to the right", noremap = true })
+map("n", "<A-3>", ":lua require('harpoon.ui').nav_file(3)<CR>", { desc = "harpoon to the left", noremap = true })
+map("n", "<A-4>", ":lua require('harpoon.ui').nav_file(4)<CR>", { desc = "harpoon to the right", noremap = true })
+
 --
 -- map("n", "<leader>a", function()
 --     harpoon.mark.add_file()
