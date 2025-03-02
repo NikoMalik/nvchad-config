@@ -9,6 +9,7 @@ o.wrap = false
 o.sidescroll = 1
 o.scrolloff = 5
 o.ignorecase = true
+o.termguicolors = true
 
 o.guicursor = ""
 o.updatetime = 10
@@ -35,3 +36,7 @@ for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
+
+local hooks = require "ibl.hooks"
+hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_tab_indent_level)

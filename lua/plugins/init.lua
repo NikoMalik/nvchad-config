@@ -184,10 +184,11 @@ return {
     },
     {
         "NvChad/nvterm",
-        config = function(_, opts)
-            require "base46.term"
-            require("nvterm").setup(opts)
-        end,
+        -- config = function(_, opts)
+        --     require "base46.term"
+        --     require("nvterm").setup(opts)
+        -- end,
+        enabled = false,
     },
     {
         "williamboman/mason.nvim",
@@ -207,7 +208,20 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
-        enabled = false,
+
+        enabled = true,
+
+        config = function()
+            require("ibl").setup {
+                indent = {
+                    char = "▏",
+                },
+                scope = {
+
+                    enabled = false,
+                },
+            }
+        end,
     },
     {
         "Exafunction/codeium.vim",
@@ -234,17 +248,16 @@ return {
         end,
         opts = {
             signs = {
-                add = { text = "│" },
+                add = { text = "+" },
                 change = { text = "│" },
                 delete = { text = "󰍵" },
                 topdelete = { text = "‾" },
                 changedelete = { text = "~" },
-                untracked = { text = "│" },
             },
             current_line_blame = true,
             current_line_blame_opts = {
                 virt_text = true,
-                virt_text_pos = "eol",
+                virt_text_pos = "eof",
                 delay = 500,
                 ignore_whitespace = false,
                 virt_text_priority = 100,

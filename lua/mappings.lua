@@ -76,9 +76,9 @@ map("n", "<S-h>", ":lua require('harpoon.ui').nav_prev()<CR>", { desc = "harpoon
 map("n", "<S-l>", ":lua require('harpoon.ui').nav_next()<CR>", { desc = "harpoon to the right", noremap = true })
 
 --
-map("i", "<C-g>", function()
-    return vim.fn["codeium#Accept"]()
-end, { expr = true })
+-- map("i", "<C-g>", function()
+--     return vim.fn["codeium#Accept"]()
+-- end, { expr = true })
 
 -- Tmux
 map("n", "<leader>ft", "<cmd>TodoTelescope<CR>", { desc = "Find Todo" })
@@ -89,10 +89,10 @@ map("n", "<c-k>", "<cmd>:TmuxNavigateUp<cr>", { desc = "Tmux Up" })
 map("n", "<c-j>", "<cmd>:TmuxNavigateDown<cr>", { desc = "Tmux Down" })
 
 -- Git
-map("n", "<leader>gl", ":Flog<CR>", { desc = "Git Log" })
-map("n", "<leader>gf", ":DiffviewFileHistory<CR>", { desc = "Git File History" })
-map("n", "<leader>gc", ":DiffviewOpen HEAD~1<CR>", { desc = "Git Last Commit" })
-map("n", "<leader>gt", ":DiffviewToggleFile<CR>", { desc = "Git File History" })
+-- map("n", "<leader>gl", ":Flog<CR>", { desc = "Git Log" })
+-- map("n", "<leader>gf", ":DiffviewFileHistory<CR>", { desc = "Git File History" })
+-- map("n", "<leader>gc", ":DiffviewOpen HEAD~1<CR>", { desc = "Git Last Commit" })
+-- map("n", "<leader>gt", ":DiffviewToggleFile<CR>", { desc = "Git File History" })
 
 -- Errors
 map("n", "<leader-1>", function()
