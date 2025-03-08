@@ -1,5 +1,3 @@
----@type Base46Table
-
 local M = {}
 
 M.base_30 = {
@@ -10,14 +8,17 @@ M.base_30 = {
     one_bg = "#05080a",
     one_bg2 = "#0F1214",
     one_bg3 = "#141719",
+
     grey = "#05080a",
     grey_fg = "#FFF2FF",
     grey_fg2 = "#F5E8FF",
+
     light_grey = "#FAEDFF",
     red = "#FFB2AD",
     baby_pink = "#ffc2d0",
     pink = "#FFBDCB",
     line = "#1e2123",
+
     green = "#B4F8C8",
     vibrant_green = "#b9fdcd",
     nord_blue = "#BFFBF9",
@@ -28,6 +29,7 @@ M.base_30 = {
     dark_purple = "#D2C5E8",
     teal = "#bff2ea",
     orange = "#FFDCAC",
+
     cyan = "#93e6f5",
     statusline_bg = "#05080a",
     lightbg = "#05080a",
@@ -56,7 +58,9 @@ M.base_16 = {
 }
 
 M.polish_hl = {
+
     TSVariable = {
+
         fg = M.base_30.lavender,
     },
 

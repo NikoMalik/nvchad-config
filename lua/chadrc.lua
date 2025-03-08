@@ -114,7 +114,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "metal",
+    theme = "vintage",
 
     -- vim.cmd.colorscheme "default",
     -- transparency = true,
