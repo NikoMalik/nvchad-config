@@ -8,6 +8,18 @@ return {
     },
 
     {
+
+        "nvchad/base46",
+        build = function()
+            require("base46").load_all_highlights()
+        end,
+    },
+
+    { "NvChad/nvim-colorizer.lua", enabled = true },
+
+    -- { "blazkowolf/gruber-darker.nvim" },
+
+    {
         "ThePrimeagen/harpoon",
         event = "VeryLazy",
         config = function()
@@ -24,18 +36,19 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         lazy = false,
+        enable = true,
         config = function()
             dofile(vim.g.base46_cache .. "syntax")
             require "configs.treesitter"
             require("nvim-treesitter.configs").setup {
                 highlight = {
                     enable = true,
-                    disabe = { "indent" },
+                    disable = { "indent" },
                     use_languagetree = true, -- Fixed typo here
                     additional_vim_regex_highlighting = false,
                 },
                 indent = {
-                    enable = true,
+                    enable = false,
                 },
             }
         end,
@@ -210,6 +223,8 @@ return {
         "lukas-reineke/indent-blankline.nvim",
 
         enabled = true,
+
+        dofile(vim.g.base46_cache .. "blankline"),
 
         config = function()
             require("ibl").setup {

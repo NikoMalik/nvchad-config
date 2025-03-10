@@ -18,7 +18,6 @@ local M = {}
 -- enD
 
 M.ui = {
-    custom_themeDir = { "themes" },
 
     hl_override = {
         DiffChange = { bg = "#464414", fg = "none" },
@@ -114,7 +113,8 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "vintage",
+    theme = "gruber",
+    -- theme = vim.cmd.colorscheme "gruber-darker",
 
     -- vim.cmd.colorscheme "default",
     -- transparency = true,

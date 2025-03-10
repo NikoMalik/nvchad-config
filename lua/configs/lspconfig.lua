@@ -82,7 +82,7 @@ lspconfig.gopls.setup {
             },
             staticcheck = true,
             diagnosticsDelay = "100ms",
-            hoverKind = "FullDocumentation", -- Can be "SingleLine", "Structured" or "FullDocumentation"
+            hoverKind = "Structured", -- Can be "SingleLine", "Structured" or "FullDocumentation"
 
             usePlaceholders = false,
             analyses = {

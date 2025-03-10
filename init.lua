@@ -33,6 +33,7 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "autocomands"
+-- vim.cmd.colorscheme "gruber-darker"
 
 -- require("configs.utils.autosave")
 
