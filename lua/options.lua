@@ -10,10 +10,11 @@ o.sidescroll = 1
 o.scrolloff = 5
 o.ignorecase = true
 o.termguicolors = true
-
 o.guicursor = ""
 o.updatetime = 10
+o.expandtab = true
 
+o.modeline = true
 o.cmdheight = 1
 
 o.breakindent = true
@@ -28,6 +29,7 @@ vim.diagnostic.config {
 }
 
 o.smartindent = true
+o.smartcase = true
 
 o.relativenumber = false
 
