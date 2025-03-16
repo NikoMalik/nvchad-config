@@ -22,6 +22,9 @@ map("n", "<C-a>", "gg<S-v>G")
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
 
+map("n", "j", "gj", { noremap = true, silent = true })
+map("n", "k", "gk", { noremap = true, silent = true })
+
 map("n", "gd", function()
     vim.lsp.buf.definition()
 end, { desc = "Go to definition" })

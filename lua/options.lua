@@ -6,8 +6,9 @@ o.shiftwidth = 4
 o.tabstop = 4
 o.softtabstop = 4
 o.wrap = false
-o.sidescroll = 1
-o.scrolloff = 5
+-- o.sidescroll = 1
+o.scrolloff = 8
+o.sidescrolloff = 8
 o.ignorecase = true
 o.termguicolors = true
 o.guicursor = ""
@@ -27,6 +28,8 @@ o.showtabline = 0
 vim.diagnostic.config {
     virtual_text = true,
 }
+
+o.smoothscroll = true
 
 o.smartindent = true
 o.smartcase = true

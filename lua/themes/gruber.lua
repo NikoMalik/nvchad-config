@@ -1,10 +1,10 @@
-local gruber_darker_fg = "#e4e4ef"
+local gruber_darker_fg = "#c1c1c1"
 local gruber_darker_fg1 = "#f4f4ff"
-local gruber_darker_fg2 = "#f5f5f5"
-local gruber_darker_white = "#ffffff"
+local gruber_darker_fg2 = "#c1c1c1"
+local gruber_darker_white = "#999999"
 local gruber_darker_black = "#000000"
-local gruber_darker_bg_1 = "#101010"
-local gruber_darker_bg = "#181818"
+local gruber_darker_bg_1 = "#121212"
+local gruber_darker_bg = "#121212"
 local gruber_darker_bg1 = "#282828"
 local gruber_darker_bg2 = "#453d41"
 local gruber_darker_bg3 = "#484848"
@@ -99,6 +99,12 @@ M.base_16 = {
 --   },
 -- }
 --
+M.polish_hl = {
+    treesitter = {
+        ["@comment"] = { fg = "#505050", italic = true },
+    },
+}
+
 -- set the theme type whether is dark or light
 M.type = "dark" -- "or light"
 --
