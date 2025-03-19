@@ -7,14 +7,13 @@ o.tabstop = 4
 o.softtabstop = 4
 o.wrap = false
 -- o.sidescroll = 1
-o.scrolloff = 8
-o.sidescrolloff = 8
+o.scrolloff = 12
+o.sidescrolloff = 12
 o.ignorecase = true
 o.termguicolors = true
 o.guicursor = ""
 o.updatetime = 10
 o.expandtab = true
-
 o.modeline = true
 o.cmdheight = 1
 

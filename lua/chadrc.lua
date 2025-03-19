@@ -63,7 +63,7 @@ M.ui = {
 }
 
 M.nvdash = {
-    load_on_startup = true,
+    load_on_startup = false,
     header = {
         --
         -- "                 ▄              ▄    ",
@@ -113,7 +113,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "gruber",
+    theme = "notepad",
     -- theme = vim.cmd.colorscheme "gruber-darker",
 
     -- vim.cmd.colorscheme "default",

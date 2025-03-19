@@ -4,6 +4,7 @@ M.base_16 = {
     base00 = "#1a1a1a",
     base01 = "#222222",
     base02 = "#2a2a2a",
+
     base03 = "#444444",
     base04 = "#555555",
     base05 = "#cccccc",
@@ -27,6 +28,7 @@ M.base_30 = {
     darker_black = "#141414",
 
     black = M.base_16.base00,
+
     black2 = "#1e1e1e",
     one_bg = "#242424",
     one_bg2 = "#2e2e2e",
@@ -77,6 +79,7 @@ M.polish_hl = {
 
     CursorLine = { bg = M.base_30.black2 },
     Visual = { bg = M.base_30.one_bg3 },
+
     MatchParen = { bg = M.base_30.one_bg2, underline = true },
 
     DiagnosticError = { fg = M.base_16.base05 },
