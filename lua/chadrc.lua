@@ -113,7 +113,7 @@ M.nvdash = {
 }
 
 M.base46 = {
-    theme = "notepad",
+    theme = "gruber",
     -- theme = vim.cmd.colorscheme "gruber-darker",
 
     -- vim.cmd.colorscheme "default",

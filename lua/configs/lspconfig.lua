@@ -24,7 +24,7 @@ end
 
 -- Setup other LSP servers
 for _, lsp in ipairs(servers) do
-    if lsp ~= "gopls" and lsp ~= "clangd" then
+    if lsp ~= "gopls" and lsp ~= "clangd" and lsp ~= "zls" then
         lspconfig[lsp].setup {
             on_attach = function(client, bufnr)
                 nvlsp.on_attach(client, bufnr)
@@ -73,7 +73,7 @@ lspconfig.gopls.setup {
             gofumpt = true,
             completeUnimported = true,
             codelenses = {
-                gc_details = true, -- Display the garbage collector choices
+                gc_details = false, -- Display the garbage collector choices
                 -- generate = true, -- Show the "go generate" lens for generating code
                 -- regenerate_cgo = true, -- Show the "regenerate cgo" lens
                 -- tidy = true, -- Show the "go mod tidy" lens
@@ -82,10 +82,11 @@ lspconfig.gopls.setup {
             },
             staticcheck = true,
             diagnosticsDelay = "100ms",
-            hoverKind = "Structured", -- Can be "SingleLine", "Structured" or "FullDocumentation"
+            hoverKind = "SingleLine", -- Can be "SingleLine", "Structured" or "FullDocumentation"
 
             usePlaceholders = false,
             analyses = {
+                modernize = false,
                 unusedparam = true,
                 -- fieldalignment = true,
                 sizeoffset = true,
